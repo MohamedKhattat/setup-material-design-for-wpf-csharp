@@ -58,7 +58,7 @@ Follow these steps to set up the project:
 
 
 2. **install packages**:
-   
+     ```bash
   Install-Package MahApps.Metro -Version 2.4.9
    Install-Package ControlzEx -Version 4.3.0
    Install-Package MaterialDesignColors -Version 2.0.0
