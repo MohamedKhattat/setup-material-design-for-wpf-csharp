@@ -7,7 +7,12 @@
 ## Overview
 
 This project serves as a starting point for developers who want to build WPF applications with **Material Design principles**. It leverages the [Material Design in XAML Toolkit](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit) to enhance the aesthetics and usability of WPF applications with clean, modern UI components.
+
+## demontration
 ![Demo Screenshot](https://github.com/MohamedKhattat/setup-material-design-for-wpf-csharp/blob/main/github-moderneui.PNG)
+
+![Demo Screenshot](https://github.com/MohamedKhattat/setup-material-design-for-wpf-csharp/blob/main/github-moderneui2.PNG)
+
 
 ---
 
