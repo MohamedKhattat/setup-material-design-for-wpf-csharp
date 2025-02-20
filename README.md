@@ -52,6 +52,10 @@ Follow these steps to set up the project:
    Uninstall-Package MahApps.Metro -Force
    Uninstall-Package ControlzEx -Force
    Uninstall-Package Microsoft.Xaml.Behaviors.Wpf -Force
+---
+
+## setup packages
+
 
 2. **install packages**:
    
@@ -61,3 +65,6 @@ Follow these steps to set up the project:
    Install-Package MaterialDesignThemes -Version 4.0.0
    Install-Package MaterialDesignThemes.MahApps -Version 0.1.6
    Install-Package Microsoft.Xaml.Behaviors.Wpf -Version 1.1.39
+
+---
+
