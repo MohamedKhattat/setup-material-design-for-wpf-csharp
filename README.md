@@ -45,3 +45,19 @@ This project serves as a starting point for developers who want to build WPF app
 1. Clone the repository:
    ```bash
    git clone https://github.com/MohamedKhattat/wpf-material-design-project.git
+
+   ```bash
+   Uninstall-Package MaterialDesignThemes.MahApps -Force
+   Uninstall-Package MaterialDesignThemes -Force
+   Uninstall-Package MaterialDesignColors -Force
+   Uninstall-Package MahApps.Metro -Force
+   Uninstall-Package ControlzEx -Force
+   Uninstall-Package Microsoft.Xaml.Behaviors.Wpf -Force
+
+
+   Install-Package MahApps.Metro -Version 2.4.9
+   Install-Package ControlzEx -Version 4.3.0
+   Install-Package MaterialDesignColors -Version 2.0.0
+   Install-Package MaterialDesignThemes -Version 4.0.0
+   Install-Package MaterialDesignThemes.MahApps -Version 0.1.6
+   Install-Package Microsoft.Xaml.Behaviors.Wpf -Version 1.1.39
