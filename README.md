@@ -46,7 +46,7 @@ This project serves as a starting point for developers who want to build WPF app
    ```bash
    git clone https://github.com/MohamedKhattat/wpf-material-design-project.git
 
-   ```bash
+   
    Uninstall-Package MaterialDesignThemes.MahApps -Force
    Uninstall-Package MaterialDesignThemes -Force
    Uninstall-Package MaterialDesignColors -Force
