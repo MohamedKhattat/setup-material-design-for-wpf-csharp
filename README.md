@@ -35,13 +35,20 @@ This project serves as a starting point for developers who want to build WPF app
 ### Prerequisites
 
 - Windows OS with Visual Studio installed.
-- .NET Framework or .NET Core installed (check the specific version required for your project).
+- **.NET Framework version 4.8 or higher** is required.
 - Basic knowledge of WPF and XAML.
 
 ---
 
 ### Installation
 
-1. Clone the repository:
+Follow these steps to set up the project:
+
+1. **Uninstall any existing conflicting packages**:
    ```bash
-   git clone https://github.com/yourusername/wpf-material-design-project.git
+   Uninstall-Package MaterialDesignThemes.MahApps -Force
+   Uninstall-Package MaterialDesignThemes -Force
+   Uninstall-Package MaterialDesignColors -Force
+   Uninstall-Package MahApps.Metro -Force
+   Uninstall-Package ControlzEx -Force
+   Uninstall-Package Microsoft.Xaml.Behaviors.Wpf -Force
