@@ -44,4 +44,4 @@ This project serves as a starting point for developers who want to build WPF app
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/wpf-material-design-project.git
+   git clone https://github.com/MohamedKhattat/wpf-material-design-project.git
