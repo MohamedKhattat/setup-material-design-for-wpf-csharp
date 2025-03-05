@@ -1,0 +1,18 @@
+{
+    "PrimaryColor": "#7A73D1",
+    "SecondaryColor": "#6200EE",
+    "ButtonPadding": "10",
+    "FontSize": "16",
+    "DatePickerForeground": "DarkBlue",
+    "DatePickerBackground": "White",
+    "DatePickerBorderBrush": "#6200EE",
+    "DatePickerCalendarBackground": "White",
+    "DatePickerCalendarBorderBrush": "#6200EE",
+    "DatePickerCalendarForeground": "DarkBlue",
+    "CalendarForegroundColor": "DarkBlue",
+    "CalendarBorderColor": "DarkBlue",
+
+    "DatePickerFontSize": "16",
+    "DatePickerStartDate": "2000-01-01",
+    "DatePickerEndDate": "12/31/2024"
+}

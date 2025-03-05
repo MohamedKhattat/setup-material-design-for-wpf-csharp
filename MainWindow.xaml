@@ -1,18 +1,24 @@
-﻿<controls:MetroWindow x:Class="MaterialDesignApp.MainWindow"
-                      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                      xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
-                      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-                      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-                      Title="Archiver les données" Height="600" Width="800"
-                      GlowBrush="{DynamicResource PrimaryHueDarkBrush}" 
-                      BorderBrush="{DynamicResource SecondaryAccentBrush}" 
-                      WindowStartupLocation="CenterScreen">
+﻿<controls:MetroWindow
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    xmlns:av="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    x:Name="metroWindow" mc:Ignorable="av"
+    x:Class="MaterialDesignApp.MainWindow"
+    Title="Archiver les données" Height="999" Width="1300"
+    GlowBrush="{DynamicResource PrimaryHueDarkBrush}"
+    BorderBrush="{DynamicResource SecondaryAccentBrush}"
+    WindowStartupLocation="CenterScreen"
+    
+    Icon="/e705a7f185ab90484dcb83c002b580fc.jpg">
 
-    <DockPanel>
+    <DockPanel Width="799">
         <!-- Styles for consistency -->
         <DockPanel.Resources>
-            <Style TargetType="Button">
+            <Style TargetType="{x:Type Button}">
                 <Setter Property="Height" Value="40"/>
                 <Setter Property="Width" Value="200"/>
                 <Setter Property="HorizontalAlignment" Value="Center"/>
@@ -22,44 +28,50 @@
                 <Setter Property="FontFamily" Value="Segoe UI"/>
             </Style>
 
-            <Style TargetType="CheckBox">
+            <Style TargetType="{x:Type CheckBox}">
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
             </Style>
 
-            <Style TargetType="ComboBox">
+            <Style TargetType="{x:Type ComboBox}">
                 <Setter Property="Width" Value="250"/>
                 <Setter Property="Margin" Value="10"/>
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
             </Style>
 
-            <Style TargetType="TextBlock">
+            <Style TargetType="{x:Type TextBlock}">
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="Foreground" Value="{DynamicResource PrimaryHueMidBrush}"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
             </Style>
 
-            <Style TargetType="DatePicker">
+            <Style TargetType="{x:Type DatePicker}">
                 <Setter Property="FontSize" Value="16"/>
                 <Setter Property="Margin" Value="5"/>
                 <Setter Property="FontFamily" Value="Segoe UI"/>
             </Style>
         </DockPanel.Resources>
 
+        <DockPanel.OpacityMask>
+            <ImageBrush ImageSource="/e705a7f185ab90484dcb83c002b580fc.jpg"/>
+        </DockPanel.OpacityMask>
+
         <!-- Header Section -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">
-            <TextBlock FontSize="24" FontWeight="Bold" Foreground="{DynamicResource PrimaryHueMidBrush}">
-                Archiver les données
+            <TextBlock FontSize="24" FontWeight="Bold" Foreground="{DynamicResource MahApps.Brushes.Badged.Foreground.Disabled}">
+                <Run Text="Archiver les données"/>
             </TextBlock>
             <Image Source="/Capture_d_écran_2024-02-25_142810-removebg-preview.png" Height="50" HorizontalAlignment="Center" Margin="10"/>
         </StackPanel>
 
         <!-- Selection Section -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">
-            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">Veuillez choisir le type de données à archiver</TextBlock>
-            <ComboBox Name="dataTypeComboBox" Style="{StaticResource MaterialDesignFilledComboBox}">
+            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">
+                <Run Text="Veuillez choisir le type de données à archiver"/>
+            </TextBlock>
+            <ComboBox x:Name="dataTypeComboBox" Style="{StaticResource MaterialDesignFilledComboBox}">
                 <ComboBoxItem Content="Pistes d'audit"/>
                 <ComboBoxItem Content="Données d'encaissements"/>
                 <ComboBoxItem Content="Données d'encaissement avant purge"/>
@@ -68,8 +80,10 @@
 
         <!-- Archive Functions (Checkbox Section) -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">
-            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">Choisissez les fonctions à archiver</TextBlock>
-            <CheckBox Content="Archiver les logs d'audit" Margin="10"/>
+            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">
+                <Run Text="Choisissez les fonctions à archiver"/>
+            </TextBlock>
+            <CheckBox Content="Archiver les logs d'audit" Margin="10" />
             <CheckBox Content="Archiver les données sensibles" Margin="10"/>
             <CheckBox Content="Archiver les transactions" Margin="10"/>
         </StackPanel>
@@ -77,17 +91,54 @@
         <!-- Date Selection Section with Masking -->
         <StackPanel DockPanel.Dock="Top" Margin="20" Orientation="Horizontal" HorizontalAlignment="Center">
             <TextBlock Text="Date Début:" VerticalAlignment="Center" Margin="5"/>
-            <DatePicker Name="startDatePicker" Style="{StaticResource MaterialDesignDatePicker}" 
-                        SelectedDateFormat="Short" DisplayDateStart="01/01/2000" DisplayDateEnd="12/31/2099"/>
+
+            <!-- DatePicker Début utilisant les paramètres globaux -->
+            <DatePicker x:Name="startDatePicker" 
+                SelectedDateFormat="Short"
+                DisplayDateEnd="{DynamicResource DatePickerEndDate}">
+                <!-- Utilisation du style global de Material Design -->
+                <DatePicker.Style>
+                    <StaticResource ResourceKey="MaterialDesignFloatingHintDatePicker"/>
+                </DatePicker.Style>
+            </DatePicker>
+
             <TextBlock Text="Date Fin:" VerticalAlignment="Center" Margin="5"/>
-            <DatePicker Name="endDatePicker" Style="{StaticResource MaterialDesignDatePicker}" 
-                        SelectedDateFormat="Short" DisplayDateStart="01/01/2000" DisplayDateEnd="12/31/2099"/>
+
+            <!-- DatePicker Fin utilisant les paramètres dynamiques -->
+            <DatePicker x:Name="endDatePicker"
+                SelectedDateFormat="Long"
+                DisplayDateEnd="{DynamicResource DatePickerEndDate}"
+                FlowDirection="RightToLeft"
+                Background="Red"
+                Width="200"
+                HorizontalAlignment="Right"
+                VerticalAlignment="Stretch"
+                Margin="10,10,10,10"
+                OpacityMask="#FFF97F7F"
+                FontFamily="Arial Black"
+                FontSize="20">
+                <DatePicker.Resources>
+                    <Style TargetType="{x:Type DatePickerTextBox}">
+                        <Setter Property="HorizontalContentAlignment" Value="Right" />
+                    </Style>
+                    <Style TargetType="{x:Type Popup}">
+                        <Setter Property="FlowDirection" Value="RightToLeft" />
+                    </Style>
+                </DatePicker.Resources>
+
+                <!-- Utilisation du style global de Material Design -->
+                <DatePicker.Style>
+                    <StaticResource ResourceKey="MaterialDesignDatePicker"/>
+                </DatePicker.Style>
+            </DatePicker>
         </StackPanel>
 
         <!-- Filtering Section -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">
-            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">Appliquer des filtres de données</TextBlock>
-            <ComboBox Name="filterComboBox" Width="250" Margin="10" Style="{StaticResource MaterialDesignFilledComboBox}">
+            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">
+                <Run Text="Appliquer des filtres de données"/>
+            </TextBlock>
+            <ComboBox x:Name="filterComboBox" Width="250" Margin="10" Style="{StaticResource MaterialDesignFilledComboBox}">
                 <ComboBoxItem Content="Filtrer par date"/>
                 <ComboBoxItem Content="Filtrer par type de données"/>
                 <ComboBoxItem Content="Filtrer par fonction"/>
@@ -96,8 +147,10 @@
 
         <!-- Data Table Section -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">
-            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">Aperçu des données archivées</TextBlock>
-            <DataGrid Name="dataGrid" Margin="10" AutoGenerateColumns="True" 
+            <TextBlock FontSize="16" Foreground="{DynamicResource SecondaryAccentBrush}">
+                <Run Text="Aperçu des données archivées"/>
+            </TextBlock>
+            <DataGrid x:Name="dataGrid" Margin="10" AutoGenerateColumns="True" 
                       HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
                       Height="200" BorderBrush="{DynamicResource PrimaryHueMidBrush}">
                 <DataGrid.Columns>
@@ -111,26 +164,30 @@
 
         <!-- Button Actions Section -->
         <StackPanel DockPanel.Dock="Bottom" Margin="20" HorizontalAlignment="Center" Orientation="Horizontal">
-            <Button Name="buttonArchive" Content="📁" 
+            <Button x:Name="buttonArchive" Content="📁" 
                 Background="{DynamicResource PrimaryHueDarkBrush}" 
                 Foreground="White" 
                 Style="{StaticResource MaterialDesignRaisedButton}" 
                 Click="ButtonArchive_Click" />
-            <Button Name="ExportButton"
+            <Button x:Name="ExportButton"
                     Content="Exporter"
                     Background="{DynamicResource PrimaryHueDarkBrush}"
                     Foreground="LightPink"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Click="ExportButton_Click" />
+    
+                    <Button Background="{DynamicResource PrimaryColor}"
+                    Padding="{DynamicResource ButtonPadding}"
+                    FontSize="{DynamicResource FontSize}"
+                    Content="Test" />
+
         </StackPanel>
 
-        
-        <Popup Name="notificationPopup" Placement="Bottom" VerticalOffset="20" IsOpen="False">
+        <Popup x:Name="notificationPopup" Placement="Bottom" VerticalOffset="20" IsOpen="False">
             <Border Background="Green" BorderBrush="DarkGreen" BorderThickness="1" Padding="10">
                 <TextBlock Text="Données archivées avec succès!" Foreground="White" FontSize="16"/>
             </Border>
         </Popup>
-        
-            
+
     </DockPanel>
 </controls:MetroWindow>

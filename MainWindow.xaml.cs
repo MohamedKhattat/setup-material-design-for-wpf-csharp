@@ -14,7 +14,7 @@ namespace MaterialDesignApp
 
         public MainWindow()
         {
-            InitializeComponent();
+            //InitializeComponent();
 
             // Initialisation de la notification toast avec la configuration nécessaire
             _notificationManager = new Notifier(cfg => cfg.PositionProvider = new WindowPositionProvider(this, Corner.TopRight, 10, 10));
@@ -29,7 +29,7 @@ namespace MaterialDesignApp
             };
 
             // Lier les données au DataGrid
-            dataGrid.ItemsSource = archivedData;
+            //dataGrid.ItemsSource = archivedData;
 
         }
 
@@ -44,7 +44,7 @@ namespace MaterialDesignApp
                 ArchiveData();
 
                 // Show notification
-                notificationPopup.IsOpen = true;
+                //notificationPopup.IsOpen = true;
 
                 // Hide the notification after 3 seconds
                 var timer = new System.Windows.Threading.DispatcherTimer
@@ -53,7 +53,7 @@ namespace MaterialDesignApp
                 };
                 timer.Tick += (s, args) =>
                 {
-                    notificationPopup.IsOpen = false;
+                   // notificationPopup.IsOpen = false;
                     timer.Stop();
                 };
                 timer.Start();

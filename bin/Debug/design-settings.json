@@ -1,0 +1,14 @@
+{
+    "PrimaryColor": "#6a43f7",
+    "CalendarForegroundColor": "#000000",
+    "CalendarBorderColor": "#D3D3D3",
+    "ButtonPadding": "5",
+    "FontSize": "14",
+    "DatePickerForeground": "#555555",
+    "DatePickerBackground": "#FFFFFF",
+    "DatePickerBorderBrush": "#FF0000",
+    "DatePickerStartDate": "2024-08-15",
+    "DatePickerEndDate": "2024-12-31",
+    "DatePickerFontSize": "12"
+  }
+  
