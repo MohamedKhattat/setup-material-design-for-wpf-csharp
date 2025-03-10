@@ -45,7 +45,17 @@ namespace MaterialDesignApp
                 SetResource("CalendarBorderColor", settings.CalendarBorderColor);
                 SetResource("DatePickerForeground", settings.DatePickerForeground);
                 SetResource("DatePickerBackground", settings.DatePickerBackground);
-
+                SetResource("dangerColor", settings.dangerColor);
+                SetResource("FlowDirection", settings.FlowDirection);
+                // Application du FlowDirection
+                
+                
+                
+                
+                
+                
+                
+                //SetFlowDirection(settings.FlowDirection);
                 // Taille des polices
                 Application.Current.Resources["FontSize"] = ConvertToDouble(settings.FontSize, 14.0);
 
@@ -61,15 +71,57 @@ namespace MaterialDesignApp
             }
         }
 
-        private static void SetResource(string resourceKey, string colorValue)
+        private static void SetResource(string resourceKey, string value)
         {
-            if (!string.IsNullOrWhiteSpace(colorValue))
+            if (!string.IsNullOrWhiteSpace(value))
             {
-                var color = ConvertToColor(colorValue);
-                Application.Current.Resources[resourceKey] = new SolidColorBrush(color);
-                MessageBox.Show($"🎨 {resourceKey} = {colorValue}");
+                // Vérification si c'est un FlowDirection
+                if (resourceKey == "FlowDirection")
+                {
+                    if (Enum.TryParse(value, out FlowDirection flowDirection))
+                    {
+                        Application.Current.Resources[resourceKey] = flowDirection;
+                        MessageBox.Show($"🎨 FlowDirection = {value}");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"❌ Valeur FlowDirection invalide : {value}");
+                    }
+                }
+                else
+                {
+                    // Traitement des couleurs comme d'habitude
+                    var color = ConvertToColor(value);
+                    Application.Current.Resources[resourceKey] = new SolidColorBrush(color);
+                    MessageBox.Show($"🎨 {resourceKey} = {value}");
+                }
             }
         }
+
+        private static void SetFlowDirection(string flowDirection)
+        {
+            if (!string.IsNullOrWhiteSpace(flowDirection))
+            {
+                try
+                {
+                    // Vérifie si le FlowDirection est défini correctement (LeftToRight ou RightToLeft)
+                    if (flowDirection.Equals("RightToLeft", StringComparison.OrdinalIgnoreCase))
+                    {
+                        Application.Current.MainWindow.FlowDirection = FlowDirection.RightToLeft;
+                    }
+                    else
+                    {
+                        Application.Current.MainWindow.FlowDirection = FlowDirection.LeftToRight;
+                    }
+                    MessageBox.Show($"💡 FlowDirection appliqué : {flowDirection}");
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"❌ Erreur lors de l'application du FlowDirection : {ex.Message}");
+                }
+            }
+        }
+
 
         private static Color ConvertToColor(string colorString)
         {
@@ -130,5 +182,8 @@ namespace MaterialDesignApp
         public string FontSize { get; set; }
         public string DatePickerStartDate { get; set; }
         public string DatePickerEndDate { get; set; }
+        public string dangerColor { get; set; }
+
+        public string FlowDirection { get; set; }
     }
 }

@@ -1,14 +1,17 @@
 {
-    "PrimaryColor": "#6a43f7",
-    "CalendarForegroundColor": "#000000",
-    "CalendarBorderColor": "#D3D3D3",
-    "ButtonPadding": "5",
-    "FontSize": "14",
-    "DatePickerForeground": "#555555",
-    "DatePickerBackground": "#FFFFFF",
-    "DatePickerBorderBrush": "#FF0000",
-    "DatePickerStartDate": "2024-08-15",
-    "DatePickerEndDate": "2024-12-31",
-    "DatePickerFontSize": "12"
-  }
-  
+  "PrimaryColor": "#2aff00",
+  "CalendarForegroundColor": "#000000",
+  "CalendarBorderColor": "#CCCCCC",
+  "DatePickerForeground": "#000000",
+  "DatePickerBackground": "#FFFFFF",
+  "FontSize": "14",
+  "DatePickerStartDate": "2025-01-01T00:00:00",
+  "DatePickerEndDate": "2026-12-31T00:00:00",
+  "dangerColor": "#2aff00",
+  "FlowDirection": "RightToLeft",
+  "FontFamily": "Arial",  
+  "FontWeight": "Normal",
+  "FontStyle": "Normal",
+  "FontStretch": "Normal"
+
+}

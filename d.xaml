@@ -9,7 +9,9 @@
                       BorderBrush="{DynamicResource SecondaryAccentBrush}" 
                       WindowStartupLocation="CenterScreen">
 
-    <DockPanel>
+    
+
+        <DockPanel>
         <!-- Styles for consistency -->
         <DockPanel.Resources>
             <!-- Appliquer les couleurs dynamiquement -->
@@ -81,6 +83,7 @@
             </TextBlock>
             <Image Source="/Capture_d_écran_2024-02-25_142810-removebg-preview.png" Height="50" HorizontalAlignment="Center" Margin="10"/>
         </StackPanel>
+
 
         <!-- Selection Section -->
         <StackPanel DockPanel.Dock="Top" Margin="20" HorizontalAlignment="Center">

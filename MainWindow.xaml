@@ -93,14 +93,19 @@
             <TextBlock Text="Date Début:" VerticalAlignment="Center" Margin="5"/>
 
             <!-- DatePicker Début utilisant les paramètres globaux -->
-            <DatePicker x:Name="startDatePicker" 
+            <DatePicker x:Name="startDatePicker"
                 SelectedDateFormat="Short"
-                DisplayDateEnd="{DynamicResource DatePickerEndDate}">
+                DisplayDateStart="{DynamicResource DatePickerStartDate}"
+                DisplayDateEnd="{DynamicResource DatePickerEndDate}"
+                        
+                >
+                
                 <!-- Utilisation du style global de Material Design -->
                 <DatePicker.Style>
                     <StaticResource ResourceKey="MaterialDesignFloatingHintDatePicker"/>
                 </DatePicker.Style>
             </DatePicker>
+
 
             <TextBlock Text="Date Fin:" VerticalAlignment="Center" Margin="5"/>
 
@@ -108,7 +113,7 @@
             <DatePicker x:Name="endDatePicker"
                 SelectedDateFormat="Long"
                 DisplayDateEnd="{DynamicResource DatePickerEndDate}"
-                FlowDirection="RightToLeft"
+                
                 Background="Red"
                 Width="200"
                 HorizontalAlignment="Right"
@@ -165,18 +170,18 @@
         <!-- Button Actions Section -->
         <StackPanel DockPanel.Dock="Bottom" Margin="20" HorizontalAlignment="Center" Orientation="Horizontal">
             <Button x:Name="buttonArchive" Content="📁" 
-                Background="{DynamicResource PrimaryHueDarkBrush}" 
+                Background="{DynamicResource dangerColor}" 
                 Foreground="White" 
                 Style="{StaticResource MaterialDesignRaisedButton}" 
                 Click="ButtonArchive_Click" />
             <Button x:Name="ExportButton"
                     Content="Exporter"
-                    Background="{DynamicResource PrimaryHueDarkBrush}"
+                    Background="{DynamicResource dangerColor}"
                     Foreground="LightPink"
                     Style="{StaticResource MaterialDesignRaisedButton}"
                     Click="ExportButton_Click" />
-    
-                    <Button Background="{DynamicResource PrimaryColor}"
+
+            <Button Background="{DynamicResource dangerColor}"
                     Padding="{DynamicResource ButtonPadding}"
                     FontSize="{DynamicResource FontSize}"
                     Content="Test" />
